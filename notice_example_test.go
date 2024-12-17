@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/lib/pq"
+	"github.com/johnjonesbwai/pq"
 )
 
 func ExampleConnectorWithNoticeHandler() {

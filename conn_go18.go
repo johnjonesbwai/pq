@@ -73,12 +73,6 @@ func (cn *conn) BeginTx(ctx context.Context, opts driver.TxOptions) (driver.Tx, 
 		return nil, fmt.Errorf("pq: isolation level not supported: %d", opts.Isolation)
 	}
 
-	if opts.ReadOnly {
-		mode += " READ ONLY"
-	} else {
-		mode += " READ WRITE"
-	}
-
 	tx, err := cn.begin(mode)
 	if err != nil {
 		return nil, err
